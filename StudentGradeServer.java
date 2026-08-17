@@ -18,8 +18,12 @@ public class StudentGradeServer {
     public static void main(String[] args) throws Exception {
 
         // Create server on port 8080
-        HttpServer server = HttpServer.create(
-                new InetSocketAddress(8080), 0);
+        int port = Integer.parseInt(
+    System.getenv().getOrDefault("PORT", "8080")
+);
+
+HttpServer server = HttpServer.create(
+    new InetSocketAddress("0.0.0.0", port), 0);
 
         // Serve HTML, CSS and JavaScript
         server.createContext("/", StudentGradeServer::serveFiles);
