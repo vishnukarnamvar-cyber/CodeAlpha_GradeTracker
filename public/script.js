@@ -50,13 +50,17 @@ async function addStudent() {
 
         console.log("4. Sending request to Java...");
 
-        const response = await fetch("http://localhost:8080/api/add", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `name=${encodeURIComponent(name)}&marks=${encodeURIComponent(marks)}`
-        });
+        const response = await fetch(`${API}/add`, {
+    method: "POST",
+
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+
+    body:
+        "name=" + encodeURIComponent(name) +
+        "&marks=" + encodeURIComponent(marks)
+});
 
         console.log("5. Status:", response.status);
 
