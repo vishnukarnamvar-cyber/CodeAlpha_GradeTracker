@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GradeTrack | Student Grade Tracker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- APP -->
+    <div class="app">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>GradeTrack</h2>
+                    <p>Student Management</p>
+                </div>
+
+            </div>
+
+
+            <div class="menu-title">
+                MENU
+            </div>
+
+
+            <nav>
+
+                <a href="#dashboard" class="menu active">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="#students" class="menu">
+                    <span>♙</span>
+                    Students
+                </a>
+
+                <a href="#statistics" class="menu">
+                    <span>◈</span>
+                    Statistics
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="server-card">
+
+                    <div class="server-icon">
+                        ☕
+                    </div>
+
+                    <div class="server-info">
+
+                        <strong>Java Backend</strong>
+
+                        <span>
+                            Server connected
+                        </span>
+
+                    </div>
+
+                    <div class="online-dot"></div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main" id="dashboard">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="small-heading">
+                        STUDENT MANAGEMENT SYSTEM
+                    </p>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                </div>
+
+
+                <div class="connection">
+
+                    <span></span>
+
+                    Java Server Online
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ================= HERO ================= -->
+
+            <section class="hero">
+
+                <div class="hero-left">
+
+                    <div class="tag">
+                        ✦ GRADE MANAGEMENT
+                    </div>
+
+                    <h2>
+                        Manage student
+                        <span>performance</span>
+                        smarter.
+                    </h2>
+
+                    <p>
+                        Add student marks, calculate grades,
+                        and monitor academic performance
+                        from one beautiful dashboard.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-illustration">
+
+                    <div class="circle circle-one"></div>
+
+                    <div class="circle circle-two"></div>
+
+                    <div class="cap">
+                        🎓
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= ADD STUDENT ================= -->
+
+            <section class="add-section">
+
+                <div class="section-title">
+
+                    <div class="title-icon">
+                        +
+                    </div>
+
+                    <div>
+                        <h2>Add New Student</h2>
+
+                        <p>
+                            Enter student details below
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+
+                    <div class="input-box">
+
+                        <label>
+                            STUDENT NAME
+                        </label>
+
+                        <div class="input">
+
+                            <span>👤</span>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                placeholder="Enter student name"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="input-box marks-input">
+
+                        <label>
+                            MARKS
+                        </label>
+
+                        <div class="input">
+
+                            <span>📝</span>
+
+                            <input
+                                type="number"
+                                id="studentMarks"
+                                placeholder="0 - 100"
+                                min="0"
+                                max="100"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="add-button"
+                        onclick="addStudent()">
+
+                        <span>+</span>
+
+                        Add Student
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <section class="stats" id="statistics">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon purple">
+                            📊
+                        </div>
+
+                        <span>
+                            AVERAGE
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+
+                        <strong id="average">
+                            0
+                        </strong>
+
+                        <small>/ 100</small>
+
+                    </div>
+
+                    <p>
+                        Overall class average
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon yellow">
+                            🏆
+                        </div>
+
+                        <span>
+                            HIGHEST SCORE
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+
+                        <strong id="highest">
+                            0
+                        </strong>
+
+                        <small>marks</small>
+
+                    </div>
+
+                    <p>
+                        Best student performance
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon red">
+                            📉
+                        </div>
+
+                        <span>
+                            LOWEST SCORE
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+
+                        <strong id="lowest">
+                            0
+                        </strong>
+
+                        <small>marks</small>
+
+                    </div>
+
+                    <p>
+                        Needs more attention
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon blue">
+                            👨‍🎓
+                        </div>
+
+                        <span>
+                            STUDENTS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+
+                        <strong id="totalStudents">
+                            0
+                        </strong>
+
+                        <small>total</small>
+
+                    </div>
+
+                    <p>
+                        Registered students
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= STUDENT TABLE ================= -->
+
+            <section class="students-section" id="students">
+
+
+                <div class="table-heading">
+
+                    <div>
+
+                        <p>
+                            RECORD MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Student Records
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="clear-button"
+                        onclick="clearStudents()">
+
+                        🗑 Clear All
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    STUDENT
+                                </th>
+
+                                <th>
+                                    MARKS
+                                </th>
+
+                                <th>
+                                    GRADE
+                                </th>
+
+                                <th>
+                                    PERFORMANCE
+                                </th>
+
+                                <th>
+                                    ACTION
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentTable">
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="empty">
+
+                                    <div class="empty-icon">
+                                        🎓
+                                    </div>
+
+                                    <h3>
+                                        No students added
+                                    </h3>
+
+                                    <p>
+                                        Add a student above to
+                                        start tracking grades.
+                                    </p>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                <div>
+                    <strong>GradeTrack</strong>
+                    <span>Student Grade Tracker</span>
+                </div>
+
+                <div>
+                    Powered by Java ☕
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
